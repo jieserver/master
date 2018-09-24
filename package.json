@@ -1,0 +1,61 @@
+{
+  "name": "jserver-master",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jieserver/master.git"
+  },
+  "author": "Will Hu",
+  "license": "ISC",
+  "configurations": {
+    "#": "JieServer Master的配置",
+    "workerNum": 1,
+    "excludeAddins": [
+      "monitor.js"
+    ],
+    "+cule": {
+      "#": "微服务管理",
+      "forks": {
+        "jieTest": {
+          "path": "../testJies"
+        }
+      }
+    },
+    "+httpServer": {
+      "#": "master自有的http服务",
+      "port": 10000,
+      "static": {
+        "/": "./views"
+      }
+    },
+    "+sync": {
+      "#": "master同步服务以及udp发现服务",
+      "port": 13527,
+      "interval": 3000,
+      "payload": {
+        "addinsMD5": "0d623aab472eb08d7778f9e43b32fd78",
+        "address": "192.168.28.108",
+        "baseUrl": "http://192.168.28.108:10000"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/jieserver/master/issues"
+  },
+  "homepage": "https://github.com/jieserver/master#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chokidar": "^2.0.4",
+    "express": "^4.16.3",
+    "forever-monitor": "^1.7.1",
+    "lodash": "^4.17.11",
+    "log4js": "^3.0.5",
+    "marked": "^0.5.0",
+    "ramda": "^0.25.0"
+  }
+}

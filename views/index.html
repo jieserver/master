@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>JServer</title>
+        <script src="/npmsrc/marked.js"></script>
+        <script src="/npmsrc/axios/dist/axios.min.js"></script>
+        <script src="/markdown/readme.md"></script>
+    </head>
+    <body id="body">
+        <a id="download" href="javascript:void(0)" download target="_blank">download</a>
+        <div id="content" style="margin:0% 20%;width:60%;min-height:90%;background: rgba(255,255,255,0.5);border: 20px solid rgba(255,255,255,0.05)"></div>
+    
+        <script >
+            axios.get('/mm',{ responseType:'arraybuffer'}).then(i=>{
+                var imgUrl = window.URL.createObjectURL(new Blob([i.data]))
+                document.getElementById('body').style.background = 'url('+imgUrl+') no-repeat 0 0 / cover'
+                document.getElementById('download').href = imgUrl
+                document.getElementById('download').download = i.headers.name
+                document.getElementById('download').innerText = i.headers.name
+            })
+        </script>
+    </body>
+</html>

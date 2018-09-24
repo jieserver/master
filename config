@@ -1,0 +1,54 @@
+module.exports = {
+  "main": {
+    "#": "JieServer Main的配置",
+    "workerNum": 1,
+    "excludeAddins": [
+      "monitor.js",
+      "dns.js",
+      "proxy.js"
+    ]
+  },
+  "log4js": {
+    "appenders": {
+      "console": {
+        "type": "stdout"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "console"
+        ],
+        "level": "all"
+      }
+    }
+  },
+  "cule": {
+    "#": "微服务管理",
+    "forks": {
+      "jieTest": {
+        "watch": true,
+        "fork": true,
+        "sourceDir": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\testJies",
+        "pid": 7640
+      }
+    }
+  },
+  "httpServer": {
+    "#": "master自有的http服务",
+    "port": 10000,
+    "static": {
+      "/": "./views"
+    }
+  },
+  "sync": {
+    "#": "master同步服务以及udp发现服务",
+    "port": 13527,
+    "interval": 3000,
+    "payload": {
+      "addinsMD5": "0dc5f2056caad4d5d462a28f2686e38e",
+      "address": "192.168.28.108",
+      "baseUrl": "http://192.168.28.108:10000"
+    }
+  }
+}
