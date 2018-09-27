@@ -30,7 +30,22 @@ module.exports = {
         "watch": true,
         "fork": true,
         "sourceDir": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\testJies",
-        "pid": 7640
+        "_pid": 10596,
+        "cwd": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\testJies"
+      },
+      "MQx": {
+        "watch": true,
+        "fork": true,
+        "sourceDir": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\MQx",
+        "cwd": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\MQx",
+        "_pid": 12072
+      },
+      "Webx": {
+        "watch": true,
+        "fork": true,
+        "sourceDir": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\webx",
+        "cwd": "c:\\Users\\Administrator\\Desktop\\Work\\Jieserver\\webx",
+        "_pid": 11956
       }
     }
   },
@@ -46,9 +61,8 @@ module.exports = {
     "port": 13527,
     "interval": 3000,
     "payload": {
-      "addinsMD5": "0dc5f2056caad4d5d462a28f2686e38e",
-      "address": "192.168.28.108",
-      "baseUrl": "http://192.168.28.108:10000"
+      "addinsMD5": "941118a82fc32a90f5f7cfbf72babf66",
+      "baseUrl": "http://192.168.31.113:10000"
     }
   }
 }
